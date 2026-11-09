@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 현재 앱(v0.9.x) 기능 기준(광고 제거 인앱 결제 포함). Google Drive 백업, OCR 추가 언어 내려받기, pro 결제 등을 앱에 넣으면 해당 항목을 추가하고 최종 수정일을 고칠 것. -->
+<!-- 현재 앱(v1.0.0) 기능 기준(광고 제거 인앱 결제, PDF·사진 가져오기, Word 내보내기, 파노라마 스캔 카메라 포함). Google Drive 백업, OCR 추가 언어 내려받기, pro 결제 등을 앱에 넣으면 해당 항목을 추가하고 최종 수정일을 고칠 것. -->
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -25,17 +25,17 @@
 <body>
 
 <h1>ScanPaper 개인정보처리방침</h1>
-<p class="updated">최종 수정일: 2026-10-25</p>
+<p class="updated">최종 수정일: 2026-11-09</p>
 
 <p>
   ScanPaper(이하 &quot;본 앱&quot;)는 문서를 스캔하고, 스캔한 문서에서 글자를 읽고, 서명·도장을 올려
-  PDF·이미지로 내보내는 앱입니다. 본 방침은 본 앱이 어떤 정보를 다루고, 어디에 저장하며,
+  PDF·이미지·Word(.docx) 파일로 내보내는 앱입니다. 본 방침은 본 앱이 어떤 정보를 다루고, 어디에 저장하며,
   언제 기기 밖으로 내보내는지 설명합니다.
 </p>
 
 <p>
   <strong>본 앱의 개발자는 서버를 운영하지 않으며, 사용자의 문서·사진·인식한 글자·서명·도장을 받거나 보관하지 않습니다.</strong>
-  스캔, 글자 인식(OCR), 도장 배경 제거는 모두 사용자의 기기 안에서 처리되며, 문서는 본 앱을 통해 업로드되지 않습니다.
+  스캔, 글자 인식(OCR), 사진 이어 붙이기, 도장 배경 제거는 모두 사용자의 기기 안에서 처리되며, 문서는 본 앱을 통해 업로드되지 않습니다.
   가입·로그인도 필요 없습니다.
 </p>
 
@@ -46,11 +46,22 @@
     기기 안에서 처리되며, 촬영한 이미지는 사용자의 기기에 저장됩니다.
   </li>
   <li>
+    <strong>파노라마 스캔</strong>: 여러 장을 겹쳐 찍어 한 장으로 이어 붙이는 기능에서만 앱의 카메라 화면을 사용하며,
+    이를 위해 카메라 권한을 요청합니다. 권한은 선택 사항이며 거부해도 문서 스캔과 갤러리 사진 선택은 그대로 쓸 수 있습니다.
+    찍은 사진은 기기 안에서만 처리하고 서버로 보내지 않으며, 이어 붙인 결과를 문서에 넣은 뒤 임시 사진은 삭제합니다.
+  </li>
+  <li>
     <strong>도장·서명 사진</strong>은 기기의 카메라 앱으로 촬영하거나 갤러리에서 고른 사진을 사용합니다.
     사용자가 고른 사진만 읽으며, 본 앱이 다른 사진에 접근하지 않습니다.
   </li>
   <li>
     <strong>갤러리 이미지</strong>는 사용자가 직접 고른 사진만 가져와 기기 안에서 처리합니다.
+  </li>
+  <li>
+    <strong>파일에서 PDF·사진 가져오기</strong>: 사용자가 파일 선택기에서 직접 고른 PDF와 사진만 읽습니다.
+    PDF는 기기 안에서 쪽마다 이미지로 바꾼 뒤 글자를 인식하며, 파일을 서버로 보내지 않습니다.
+    본 앱은 다른 파일에 접근하지 않습니다. 암호가 걸린 PDF는 열지 않습니다.
+    가져오는 동안 임시 사본이 앱의 임시 캐시에 만들어질 수 있으며 작업이 끝나면 삭제됩니다.
   </li>
   <li>
     <strong>글자 인식(OCR)</strong>은 앱에 내장된 모델로 기기 안에서 실행됩니다.
@@ -66,8 +77,12 @@
   <li>광고 이용권 만료 시각, 광고 제거 구매 여부 등 앱 설정</li>
 </ul>
 <p>
-  PDF·이미지를 내보내거나 공유할 때는 앱의 임시 캐시에 파일을 만든 뒤, 사용자가 선택한 앱이나 저장 위치로만
-  전달합니다. 전달 이후의 처리는 사용자가 선택한 앱의 방침을 따릅니다.
+  앱의 문서·서명·도장·설정은 Google 계정 자동 백업이나 기기 간 데이터 이전에 포함되지 않습니다.
+</p>
+<p>
+  PDF·이미지·Word(.docx) 파일을 내보내거나 공유할 때는 앱의 임시 캐시에 파일을 만든 뒤, 사용자가 선택한 앱이나
+  저장 위치로만 전달합니다. 안드로이드 10 이상에서 &quot;저장&quot;을 누르면 PDF를 기기의 Documents/ScanPaper 폴더에 저장하며,
+  이 파일은 앱을 삭제해도 남을 수 있으므로 사용자가 직접 지울 수 있습니다. 전달 이후의 처리는 사용자가 선택한 앱의 방침을 따릅니다.
 </p>
 
 <h2>3. 광고</h2>
@@ -86,7 +101,7 @@
   &quot;개인정보 설정(광고)&quot;에서 언제든 바꿀 수 있습니다.
 </p>
 <p>
-  보상형 광고는 사용자가 직접 선택할 때만 표시되며, 끝까지 보면 24시간 동안 추가 기능을 쓸 수 있고
+  보상형 광고는 사용자가 직접 선택할 때만 표시되며, 끝까지 보면 24시간 동안 추가 기능(서명·도장 추가 저장, 파노라마 사진 수 확대)을 쓸 수 있고
   그동안 다른 광고는 표시되지 않습니다.
 </p>
 
@@ -95,7 +110,7 @@
   광고 제거는 Google Play 결제로 판매하는 일회성 인앱 상품(구독 아님)입니다. 결제와 환불은 Google Play가 처리하며,
   본 앱의 개발자는 카드 번호 등 결제 정보를 받거나 저장하지 않습니다. 앱은 구매 여부를 확인하기 위해 Google Play에
   구매 내역을 조회하고, 광고 제거 보유 여부만 기기 안에 저장합니다. 광고 제거를 구매하면 광고가 표시되지 않고
-  서명·도장 저장 개수 제한이 없어집니다.
+  서명·도장 저장 개수 제한이 없어지며 파노라마 사진 수 제한이 늘어납니다.
 </p>
 <h2>5. Google Play 서비스</h2>
 <p>
@@ -120,17 +135,17 @@
 
 <div class="lang" lang="en">
   <h1>Privacy Policy — ScanPaper</h1>
-  <p class="updated">Last updated: 2026-10-25</p>
+  <p class="updated">Last updated: 2026-11-09</p>
 
   <p>
     ScanPaper (&quot;the app&quot;) scans documents, reads their text, and lets you add a signature
-    or stamp and export PDFs or images. This policy explains what the app handles, where it is stored,
+    or stamp and export PDFs, images, or Word (.docx) files. This policy explains what the app handles, where it is stored,
     and when it leaves your device.
   </p>
 
   <p>
     <strong>The developer runs no server and never receives or holds your documents, photos, recognized text, signatures, or stamps.</strong>
-    Scanning, text recognition (OCR), and stamp background removal run entirely on your device; the app does not
+    Scanning, text recognition (OCR), photo stitching, and stamp background removal run entirely on your device; the app does not
     upload your documents. No account or sign-in is required.
   </p>
 
@@ -141,11 +156,22 @@
       and cropping happen on the device, and the captured images are saved on your device.
     </li>
     <li>
+      <strong>Panorama scan</strong>: only this feature, which joins several overlapping photos into one page, uses the app&#39;s own camera screen
+      and asks for the camera permission. The permission is optional; if you decline, document scanning and picking photos from the gallery still work.
+      Photos are processed only on your device and are not sent to any server; the temporary photos are deleted after the joined result is added to your document.
+    </li>
+    <li>
       <strong>Stamp and signature photos</strong> come from your device&#39;s camera app or a photo you pick from the gallery.
       Only the photo you choose is read; the app does not access your other photos.
     </li>
     <li>
       A <strong>gallery image</strong> is imported only when you pick it, and is processed on the device.
+    </li>
+    <li>
+      <strong>Importing PDFs and photos from files</strong>: the app reads only the PDFs and photos you pick in the file picker.
+      Each PDF page is converted to an image on your device and then recognized; files are not sent to any server.
+      The app does not access any other files. Password-protected PDFs are not opened.
+      While importing, a temporary copy may be created in the app&#39;s temporary cache and is deleted when the work finishes.
     </li>
     <li>
       <strong>Text recognition (OCR)</strong> runs with a model bundled in the app, on the device.
@@ -161,8 +187,13 @@
     <li>App settings such as the expiry time of an ad-free pass and whether ads were removed</li>
   </ul>
   <p>
-    When you export or share a PDF or image, the file is created in the app&#39;s temporary cache and passed only to
-    the app or location you choose. What happens afterward is governed by that app&#39;s policies.
+    The app&#39;s documents, signatures, stamps, and settings are not included in Google account auto backup or device-to-device transfer.
+  </p>
+  <p>
+    When you export or share a PDF, image, or Word (.docx) file, the file is created in the app&#39;s temporary cache and
+    passed only to the app or location you choose. On Android 10 and later, tapping &quot;Save&quot; stores the PDF in the Documents/ScanPaper
+    folder on your device; that file may remain after you uninstall the app, and you can delete it yourself.
+    What happens afterward is governed by that app&#39;s policies.
   </p>
 
   <h2>3. Advertising</h2>
@@ -182,7 +213,7 @@
   </p>
   <p>
     Rewarded ads are shown only when you choose to watch one. Watching one to the end unlocks extra features
-    for 24 hours, during which other ads are not shown.
+    (saving more signatures and stamps, joining more photos in a panorama) for 24 hours, during which other ads are not shown.
   </p>
 
   <h2>4. Ad removal purchase</h2>
@@ -190,7 +221,8 @@
     Removing ads is a one-time in-app purchase (not a subscription) sold through Google Play. Google Play handles
     payment and refunds, and the developer does not receive or store your card or payment details. The app asks
     Google Play for your purchase history to check whether you own it, and stores only whether ads are removed on your
-    device. After purchasing, ads are no longer shown and the limit on saved signatures and stamps is lifted.
+    device. After purchasing, ads are no longer shown, the limit on saved signatures and stamps is lifted, and the limit on
+    panorama photos is raised.
   </p>
 
   <h2>5. Google Play services</h2>
